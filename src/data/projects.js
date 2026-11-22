@@ -13,7 +13,7 @@ export const projects = [
     category: "React",
     tech: ["React", "React Router", "Vite", "CSS"],
     image: portfolioImage,
-    liveUrl: "", 
+    liveUrl: "https://react-portfolio-zeta-khaki.vercel.app/", 
     repoUrl: "https://github.com/B-Mwangi/react-portfolio",
   },
   {
