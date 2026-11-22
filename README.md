@@ -4,8 +4,6 @@ A responsive personal portfolio built with **React** and **Vite**. It introduces
 
 **Live site:** _add your Vercel link here after deploying_
 
-![Screenshot of the portfolio home page](docs/screenshot.png)
-
 ## Features
 
 - **Multi-page navigation** with React Router: Home, Projects and Contact, plus a 404 page for unknown addresses
@@ -44,11 +42,11 @@ Then open the address shown in the terminal (usually `http://localhost:5173`).
 
 ### Other commands
 
-| Command | What it does |
-|---|---|
-| `npm run build` | Builds the production version into the `dist` folder |
-| `npm run preview` | Serves the production build locally to check it |
-| `npm run lint` | Checks the code for problems with ESLint |
+| Command           | What it does                                         |
+| ----------------- | ---------------------------------------------------- |
+| `npm run build`   | Builds the production version into the `dist` folder |
+| `npm run preview` | Serves the production build locally to check it      |
+| `npm run lint`    | Checks the code for problems with ESLint             |
 
 ## Project structure
 
