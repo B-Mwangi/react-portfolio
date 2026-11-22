@@ -1,0 +1,15 @@
+.theme-toggle {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background-color: var(--surface);
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
+  border-color: var(--accent);
+}

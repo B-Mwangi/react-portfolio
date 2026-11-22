@@ -2,9 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>react-portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Benson Mwangi, an aspiring Front-End Developer based in Nairobi, Kenya."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>John Doe | Front-End Developer</title>
+
+    <!-- Applies the saved theme before the page appears, so dark mode
+         doesn't flash white on load. ThemeToggle takes over after that. -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var theme = saved === "light" || saved === "dark" ? saved : prefersDark ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (error) {
+          // localStorage can be blocked in private browsing; the light theme is used then
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

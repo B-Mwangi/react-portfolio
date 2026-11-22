@@ -1,0 +1,184 @@
+/* ===== Theme colours (light mode) ===== */
+:root {
+  --bg: #ffffff;
+  --surface: #f4f5f7;
+  --text: #1f2328;
+  --text-muted: #5b6370;
+  --accent: #2f6fed;
+  --border: #e3e6eb;
+  --error: #d1242f;
+  --max-width: 1100px;
+}
+
+/* (dark mode) */
+[data-theme="dark"] {
+  --bg: #0f1115;
+  --surface: #181b22;
+  --text: #e6e8eb;
+  --text-muted: #9aa3ae;
+  --accent: #6e9bff;
+  --border: #2a2f38;
+  --error: #ff7b72;
+}
+
+/*Reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Page layout: footer stays at the bottom on short pages*/
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Centres page content with side padding */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+/*Reusable*/
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 2px solid var(--accent);
+  transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.btn-small {
+  padding: 0.45rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  color: #ffffff;
+  background-color: var(--accent);
+}
+
+.btn-secondary {
+  color: var(--accent);
+  background-color: transparent;
+}
+
+.btn-secondary:hover {
+  color: #ffffff;
+  background-color: var(--accent);
+}
+
+/* Section headings*/
+section {
+  padding-block: 3rem;
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+}
+
+/* tags (skills, technologies, languages) */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-list li {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background-color: var(--bg);
+}
+
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Each page fades in when you switch to it*/
+.page {
+  animation: page-in 0.4s ease both;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*  not found */
+.not-found {
+  padding-block: 5rem;
+  text-align: center;
+}
+
+.not-found-code {
+  font-size: clamp(4rem, 15vw, 7rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.not-found h1 {
+  margin-block: 1rem 0.5rem;
+}
+
+.not-found p:not(.not-found-code) {
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+}
+
+/* Turns animations off for visitors who ask for less motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

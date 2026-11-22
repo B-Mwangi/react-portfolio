@@ -1,0 +1,44 @@
+/* Phones: details above the form. Wider screens: side by side */
+.contact-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1.4fr;
+    align-items: start;
+  }
+}
+
+.contact-intro {
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+
+.contact-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-list li {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.contact-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.contact-list a {
+  color: var(--accent);
+  word-break: break-word;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}

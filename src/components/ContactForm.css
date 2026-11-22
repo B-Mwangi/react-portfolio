@@ -1,0 +1,79 @@
+.contact-form {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.form-field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.form-field label {
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font: inherit;
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+/* Clear outline when a field is selected */
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+/* Red border on fields with a problem */
+.form-field .invalid {
+  border-color: var(--error);
+}
+
+/* Keeps space for the message so the form doesn't jump when one appears */
+.field-error {
+  min-height: 1.3rem;
+  font-size: 0.85rem;
+  color: var(--error);
+}
+
+.contact-form .btn {
+  justify-self: start;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-success {
+  padding: 2rem;
+  background-color: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  animation: card-in 0.4s ease both;
+}
+
+.form-success h3 {
+  margin-bottom: 0.5rem;
+}
+
+.form-success p {
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+
+.form-success .btn {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}

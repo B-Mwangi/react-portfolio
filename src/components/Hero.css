@@ -1,0 +1,101 @@
+/* Phones: photo on top, text underneath */
+.hero {
+  padding-block: 3rem;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.hero-text {
+  max-width: 650px;
+}
+
+.hero-greeting {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.hero-name {
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  line-height: 1.1;
+}
+
+.hero-title {
+  margin-block: 0.5rem 1.25rem;
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.hero-intro {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Round photo with a ring in the accent colour */
+.hero-photo {
+  width: clamp(180px, 40vw, 300px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  animation: fade-in 0.8s ease both;
+}
+
+/* Wider screens: text on the left, photo on the right */
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-block: 5rem 3rem;
+  }
+}
+
+/* Each line of text fades up one after another when the page loads */
+.hero-text > * {
+  animation: fade-up 0.6s ease both;
+}
+
+.hero-text > :nth-child(2) { animation-delay: 0.1s; }
+.hero-text > :nth-child(3) { animation-delay: 0.2s; }
+.hero-text > :nth-child(4) { animation-delay: 0.3s; }
+.hero-text > :nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Turns animations off for visitors who ask for less motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-text > *,
+  .hero-photo {
+    animation: none;
+  }
+}
